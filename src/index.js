@@ -64,12 +64,12 @@ module.exports = function check(str, bracketsConfig) {
                 } else {
                     if (stack.isEmpty()) {
                         stack.add(currentBracket);
-                        return true;
+                        return true; // to break loop
                     } else {
-                        if (stack.top() === bracketsPair[0] && currentBracket === bracketsPair[1]) {
+                        if (stack.top() === bracketsPair[0]) {
                             stack.remove();
                         } else {
-                            return true;
+                            return true; // to break loop
                         }
                     }
                 }
